@@ -7,5 +7,6 @@ Notre projet consiste à reproduire le chiffrement RSA afin de sécuriser la com
 ## Carnet de bord
 
 ### Le 9 Avril 2021
+Création du carnet de bord et de la présentation du projet, mise en commun de nos avancements respectifs.
 [test.py](test.py)
 ### Le ...
