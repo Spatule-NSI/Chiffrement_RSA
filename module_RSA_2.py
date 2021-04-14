@@ -43,11 +43,7 @@ def pgcd(a,b):
     
 
 def pgcde(a, b):
-    
-    """ pgcd étendu avec les 2 coefficients de bézout u et v
-    Entrée : a, b entiers
-    Sorties : r = pgcd(a,b) et u, v entiers tels que a*u + b*v = r
-    """
+
     r = a
     u = 1
     v = 0
