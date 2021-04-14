@@ -8,6 +8,8 @@ Notre projet consiste à reproduire le chiffrement RSA afin de sécuriser la com
 
 ### Le 9 Avril 2021
 Création du carnet de bord et de la présentation du projet, mise en commun de nos avancements respectifs.
-[test.py](test.py)
-### Le 13 Avril 2021
-Anaïs : module python terminé. début du travail d'explication du code (commentaires...)
+Anaïs : fonctions pgcd et test primalité terminées. début fonction génératrice clés.
+[module_RSA_1.py](module_RSA_1.py)
+### Le 11 Avril 2021
+Anaïs : fonction génératrice de clés, découpage des chaînes caractères et pgcd étendu (coeff bézout) terminées.
+[module_RSA_2.py](module_RSA_2.py)
