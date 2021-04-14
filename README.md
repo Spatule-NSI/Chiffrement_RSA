@@ -2,11 +2,12 @@
 
 ## Description
 
-Notre projet consiste à reproduire le chiffrement RSA afin de sécuriser la communication entre deux machines à l'aide d'un serveur. Anaïs se chargera de la partie cryptographie et reproduira le test de primalité du théorème de Fermat qui permettra de coder le chiffrement RSA dans son entièreté. Tommy, quant à lui, s'occupera de la partie programmation réseau afin de créer un serveur et d'y connecter les deux ordinateurs qui communiqueront entre eux. L'ensemble du projet se fera en language python3.
+Notre projet consiste à reproduire le chiffrement RSA afin de sécuriser la communication entre deux machines à l'aide d'un serveur. Anaïs se chargera de la partie cryptographie et programmera un module python avec une fonction test de primalité, une fonction génératrice de clés publiques/privées, une fonction de chiffrement et une fonction de déchiffrement. Tommy, quant à lui, s'occupera de la partie programmation réseau afin de créer un serveur et d'y connecter les deux ordinateurs qui communiqueront entre eux. L'ensemble du projet se fera en language python3.
 
 ## Carnet de bord
 
 ### Le 9 Avril 2021
 Création du carnet de bord et de la présentation du projet, mise en commun de nos avancements respectifs.
 [test.py](test.py)
-### Le ...
+### Le 13 Avril 2021
+Anaïs : module python terminé. début du travail d'explication du code (commentaires...)
