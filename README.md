@@ -13,3 +13,6 @@ Anaïs : fonctions pgcd et test primalité terminées. début fonction générat
 ### Le 11 Avril 2021
 Anaïs : fonction génératrice de clés, découpage des chaînes caractères et pgcd étendu (coeff bézout) terminées.
 [module_RSA_2.py](module_RSA_2.py)
+### Le 13 Avril 2021
+Anaïs : fonctions de chiffrement et de déchiffrement terminées, module terminé.
+[module_RSA_3.py](module_RSA_3.py)
