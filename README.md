@@ -16,3 +16,5 @@ Anaïs : fonction génératrice de clés, découpage des chaînes caractères et
 ### Le 13 Avril 2021
 Anaïs : fonctions de chiffrement et de déchiffrement terminées, module terminé.
 [module_RSA_3.py](module_RSA_3.py)
+### Le 14 avril 2021
+Anaïs : début du travail de commentaires et d'explications du code.
