@@ -3,35 +3,37 @@ import numpy as np
 
 
 
-def premier(n):
+def premier(n):   # entrée : entier n / sortie : booléen (True si premier) 
+                  # teste si un nombre n est premier 
     
-    if n == 1 or n == 2:
+    if n == 1 or n == 2:    # 1 et 2 sont premiers
         
         return True
         
-    if n%2 == 0:
+    if n%2 == 0:     # si n est un nombre pair
         
         return False
         
-    r = n**0.5
+    r = n**0.5     # racine carrée de n
     
-    if r == int(r):
+    if r == int(r):     # si la racine carrée de n est un nombre entier, n n'est pas premier
         
         return False
     
-    for x in range(3, int(r), 2):
+    for x in range(3, int(r), 2):     # intervalle [3 ; n-1] avec un pas de 2 (nombres impairs)
 
-        if n % x == 0:
+        if n % x == 0:     # si n est divisible par x, il n'est pas premier
             
             return False    
     
-    return True
+    return True      # true si n est premier
     
     
     
     
 
-def cut(k, long):
+def cut(k, long):     # entrée : k = chaîne de caractères / sortie : long = liste de blocs de chaînes de caractères
+                      # découpe k en blocs de longueur long 
     
     d = 0
     f = long
@@ -39,25 +41,27 @@ def cut(k, long):
     
     l = []
     
-    while f <= len(k):
+    while f <= len(k):      # tant que la longueur à découper est inférieure à la longueur de la chaîne de caractères 
         
-        l.append(k[d:f])
+        l.append(k[d:f])     # découpe un bloc de longeuur f dans la chaîne de caractères de d (initialisé à 0) à f
         
         d = f
-        f = f + long
+        f = f + long    # on passe au bloc suivant
         
     
     m = len(k)%long
     
-    if m != 0:
+    if m != 0:     # si k n'est pas vide (nombre de caractères restant < f)
         
-        l.append(k[len(k)-m:])
+        l.append(k[len(k)-m:])     # ajoute les caractères restant à l
     
-    return l
+    return l     # renvoie k transformée en liste de blocs de chaînes de caractères de longueur l
 
 
 
-def pgcd(a,b):
+
+
+def pgcd(a,b):  # entrée : entiers a et b / sortie : entier a plus grand diviseur commun de a et b
     
     while (b>0):
         
