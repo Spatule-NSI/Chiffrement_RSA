@@ -62,6 +62,7 @@ def cut(k, long):     # entrée : k = chaîne de caractères / sortie : long = l
 
 
 def pgcd(a,b):  # entrée : entiers a et b / sortie : entier a plus grand diviseur commun de a et b
+                # calculele PGCD de a et b 
     
     while (b>0):
         
@@ -73,7 +74,7 @@ def pgcd(a,b):  # entrée : entiers a et b / sortie : entier a plus grand divise
     
     
     
-def pgcde(a, b):
+def pgcde(a, b):  # entrée : entiers a et b / sortie : r PGCD de a et b, u et v coefficients de bézout tels que au + bv = r
 
     r = a
     u = 1
@@ -82,7 +83,7 @@ def pgcde(a, b):
     up = 0
     vp = 1
     
-    while rp != 0:
+    while rp != 0:   # algorithme d'Euclide
         q = r//rp
         rs, us, vs = r, u, v
         r, u, v = rp, up, vp
