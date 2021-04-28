@@ -57,20 +57,6 @@ def cut(k, long):     # entrée : k = chaîne de caractères / sortie : long = l
     
     return l     # renvoie k transformée en liste de blocs de chaînes de caractères de longueur l
 
-
-
-
-
-def pgcd(a,b):  # entrée : entiers a et b / sortie : entier a plus grand diviseur commun de a et b
-                # calculele PGCD de a et b 
-    
-    while (b>0):
-        
-        r=a%b
-        
-        a,b=b,r
-        
-    return a
     
     
     
@@ -88,6 +74,7 @@ def pgcde(a, b):  # entrée : entiers a et b / sortie : r PGCD de a et b, u et v
         rs, us, vs = r, u, v
         r, u, v = rp, up, vp
         rp, up, vp = (rs - q*rp), (us - q*up), (vs - q*vp)
+        assert u*a + v*b == r
     
     return (r, u, v)
 
@@ -96,25 +83,25 @@ def pgcde(a, b):  # entrée : entiers a et b / sortie : r PGCD de a et b, u et v
 
 
 
-def key():
+def key():    # sortie : tuple de deux entiers / génère une paire de clés (publique / privée) sous forme de tuple
 
-    p = np.random.choice(1000,1)
-    q = np.random.choice(1000,1)
+    p = np.random.choice(1000,1)    # nombre choisi aléatoirement entre 0 et 999 avec un pas de 1
+    q = np.random.choice(1000,1)    # nombre choisi aléatoirement entre 0 et 999 avec un pas de 1
     
-    while premier(p) is False:
-        p = np.random.choice(1000,1)
+    while not premier(p):
+        p = np.random.choice(1000,1)  # tant que p n'est pas premier, choisit un nouveau nombre aléatoire entre 0 et 999 avec pas de 1
         
-    while premier(q) is False:
-        q = np.random.choice(1000,1)
+    while not premier(q):
+        q = np.random.choice(1000,1)    # tant que p n'est pas premier, choisit un nouveau nombre aléatoire entre 0 et 999 avec pas de 1
         
 
-    n = p*q
-    m = (p-1)*(q-1)
+    n = p*q   # multiplication des deux nombres premiers (module de chiffrement)
+    m = (p-1)*(q-1)   # valeur de l'indicatrice d'Euler en n
 
     r = 10
     d = 0
     while r != 1 or d <= 2 or d >= m:
-        c = np.random.choice(1000,1)
+        c = np.random.choice(1000,1)    # exposant de chiffrement premier avec n et strictement inférieur à n
         r, d, v = pgcde(c,m)
         
     n, c, d = int(n), int(c), int(d)
