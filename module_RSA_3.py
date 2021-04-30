@@ -43,7 +43,7 @@ def cut(k, long):     # entrée : k = chaîne de caractères / sortie : long = l
     
     while f <= len(k):      # tant que la longueur à découper est inférieure à la longueur de la chaîne de caractères 
         
-        l.append(k[d:f])     # découpe un bloc de longeuur f dans la chaîne de caractères de d (initialisé à 0) à f
+        l.append(k[d:f])     # découpe un bloc de longeuur f dans la chaîne de caractères à partir de d (initialisé à 0) jusqu'à f
         
         d = f
         f = f + long    # on passe au bloc suivant
@@ -69,7 +69,7 @@ def pgcde(a, b):  # entrée : entiers a et b / sortie : r PGCD de a et b, u et v
     up = 0
     vp = 1
     
-    while rp != 0:   # algorithme d'Euclide
+    while rp != 0:   # algorithme d'Euclide étendu (pour trouver les coefficients)
         q = r//rp
         rs, us, vs = r, u, v
         r, u, v = rp, up, vp
@@ -83,7 +83,8 @@ def pgcde(a, b):  # entrée : entiers a et b / sortie : r PGCD de a et b, u et v
 
 
 
-def key():    # sortie : tuple de deux entiers / génère une paire de clés (publique / privée) sous forme de tuple
+def key():    # sortie : tuple de deux entiers 
+              # génère une paire de clés (publique / privée) sous forme de tuple
 
     p = np.random.choice(1000,1)    # nombre choisi aléatoirement entre 0 et 999 avec un pas de 1
     q = np.random.choice(1000,1)    # nombre choisi aléatoirement entre 0 et 999 avec un pas de 1
@@ -101,19 +102,19 @@ def key():    # sortie : tuple de deux entiers / génère une paire de clés (pu
     r = 10
     d = 0
     while r != 1 or d <= 2 or d >= m:
-        c = np.random.choice(1000,1)    # exposant de chiffrement premier avec n et strictement inférieur à n
-        r, d, v = pgcde(c,m)
+        c = np.random.choice(1000,1)    # exposant de chiffrement premier avec m et strictement inférieur à n
+        r, d, v = pgcde(c,m)      # bézout car c et m premiers entre eux
         
-    n, c, d = int(n), int(c), int(d)
+    n, c, d = int(n), int(c), int(d)      # nombres entiers
     
 
-    return {"priv":(n,c), "pub":(n,d)}
+    return {"priv":(n,c), "pub":(n,d)}  # clé privée et clé publique
     
     
     
     
     
-def chiffre(n, c, msg):
+def chiffre(n, c, msg):     # entrée : clé privée (int) et message à chiffrer (str) / sortie :
     
  
     asc = [str(ord(j)) for j in msg]
