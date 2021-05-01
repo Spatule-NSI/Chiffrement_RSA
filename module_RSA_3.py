@@ -117,10 +117,10 @@ def key():    # sortie : tuple de deux entiers
 def chiffre(n, c, msg):     # entrée : clé privée (int) et message à chiffrer (str) / sortie :
     
  
-    asc = [str(ord(j)) for j in msg]
+    asc = [str(ord(j)) for j in msg]      # conversion du message en codes ascii 
     
 
-    for i, k in enumerate(asc):
+    for i, k in enumerate(asc):     # ajout de 0 pour que chaque code ascii soit de longueur 3
         
         if len(k) < 3:      
             
@@ -130,21 +130,15 @@ def chiffre(n, c, msg):     # entrée : clé privée (int) et message à chiffre
             
             asc[i] = k
                 
-    ascg = ''.join(asc)
+    ascg = ''.join(asc)     # chaîne de caractères qui contient tous les codes ascii concaténés 
     
-    d , f = 0 , 4
+    f = 4   # découper ascg en blocs de longueur 4
     
-    while len(ascg)%f != 0: 
+    while len(ascg)%f != 0:   # on rajoute des 0 tant que len(ascg) n'est pas divisible par 4 
         
         ascg = ascg + '0'
 
-    l = []
-    
-    while f <= len(ascg):
-        
-        l.append(ascg[d:f])
-        
-        d , f = f , f + 4
+    l = cut(ascg, f)    #liste composée d'ascg découpée en blocs de longueur f 
 
     crypt = [str(((int(i))**c)%n) for i in l]
     
