@@ -114,14 +114,13 @@ def key():    # sortie : tuple de deux entiers
     
     
     
-def chiffre(n, c, msg):     # entrée : clé privée (int) et message à chiffrer (str) / sortie :
+def chiffre(n, c, msg):     # entrée : clé privée c (int) et message à chiffrer (str) / sortie : liste de chaînes de caractères
     
  
     asc = [str(ord(j)) for j in msg]      # conversion du message en codes ascii 
     
 
-    for i, k in enumerate(asc):     # ajout de 0 pour que chaque code ascii soit de longueur 3
-        
+    for i, k in enumerate(asc):     # ajout de 0 pour que chaque code ascii soit de longueur 4       
         if len(k) < 3:      
             
             while len(k) < 3:
@@ -140,7 +139,7 @@ def chiffre(n, c, msg):     # entrée : clé privée (int) et message à chiffre
 
     l = cut(ascg, f)    #liste composée d'ascg découpée en blocs de longueur f 
 
-    crypt = [str(((int(i))**c)%n) for i in l]
+    crypt = [str((int(i)**c)%n) for i in l]  # exponentiation modulaire : message à la puissance c modulo n 
     
     return crypt
     
@@ -157,12 +156,12 @@ def chiffre(n, c, msg):     # entrée : clé privée (int) et message à chiffre
     
     
     
-def dechiffre(n, d, *crypt):
+def dechiffre(n, d, *crypt):    #  entrée : clé publique (int) et message à déchiffrer (liste) / sortie : chaîne de caractères correspondant au message déchiffré
 
-    resultat = [str((int(i)**d)%n) for i in crypt]
+    resultat = [str((int(i)**d)%n) for i in crypt]   # exponentiation modulaire
         
         
-    for i, s in enumerate(resultat):
+    for i, s in enumerate(resultat):   # ajout de 0 pour que chaque code ascii soit de longueur 5
         
         if len(s) < 4:
             
@@ -172,7 +171,7 @@ def dechiffre(n, d, *crypt):
             
             resultat[i] = s
         
-    g = ''.join(resultat)
+    g = ''.join(resultat)   # chaîne de caractères qui contient tous les codes ascii concaténés
     
     asci = ''
     
@@ -180,7 +179,7 @@ def dechiffre(n, d, *crypt):
     
     while f < len(g):
         
-        asci = asci + chr(int(g[d:f])) 
+        asci = asci + chr(int(g[d:f]))   # convertit en caractère correspondant au code de caractère Unicode (de d à f)
         
         d , f = f , f + 3
     
