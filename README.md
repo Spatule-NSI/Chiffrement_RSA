@@ -10,13 +10,13 @@ Notre projet consiste à reproduire le chiffrement RSA afin de sécuriser la com
 Création du carnet de bord et de la présentation du projet, mise en commun de nos avancements respectifs.
 Anaïs : fonction test primalité terminée. début fonction génératrice clés.
 [module_RSA_1.py](module_RSA_1.py)
-### Le 11 Avril 2021
+### Le 14 Avril 2021
 Anaïs : fonction génératrice de clés, découpage des chaînes caractères et pgcd étendu (coeff bézout) terminées.
 [module_RSA_2.py](module_RSA_2.py)
-### Le 13 Avril 2021
+### Le 23 Avril 2021
 Anaïs : fonctions de chiffrement et de déchiffrement terminées, module terminé.
 [module_RSA_3.py](module_RSA_3.py)
-### Le 14 avril 2021
+### Le 28 avril 2021
 Anaïs : début du travail de commentaires et d'explications du code.
 Tommy : Documentation sur la programmation réseau.
 ### Le 20 Avril 2021
