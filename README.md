@@ -23,7 +23,7 @@ Anaïs : fonctions de chiffrement et de déchiffrement terminées, module termin
 ### Le 27 Avril
 Tommy : Ajout des modules crées par Anaïs, afin de pouvoir envoyer des informations chiffrées par une clé.
 ### Le 28 Avril
-Tommy : Mise en place d'une solution afin de pouvoir s'échanger les clés publiques
+Tommy : Mise en place d'une solution afin de pouvoir s'échanger les clés publiques.<br/>
 Anaïs : début du travail de commentaires et d'explications du code.
 ### Le 30 Avril
 Tommy : Finalisation du programme.
